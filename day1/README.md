@@ -1,5 +1,13 @@
 Question of the day: https://leetcode.com/problems/min-stack/#/description
 
+## Why this question? ##
+
+Codeology is working on linked lists, stacks, and queues so I thought it'd
+be good for me to brush up.
+
+Applications of a MinStack:
+not sure at the moment..
+
 ## Ideas ##
 
 In a basic stack, `push`, `pop`, and `peek` or `top` are already doable in
