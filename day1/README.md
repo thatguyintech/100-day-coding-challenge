@@ -23,3 +23,6 @@ of minimum values that change as I add nodes.
 
 I'll implement a `Node` class to use within my `MinStack` class so that
 I can have that extra `prevMin` pointer.
+
+## Code ##
+[Python](./minstack.py)
