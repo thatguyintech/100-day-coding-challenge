@@ -46,3 +46,9 @@ on my solution because in my code I first count how many elements `n`
 there are, and then use that `n` to generate a random number, so my total
 runtime is `O(1.5n)`, which is still asymptotically `O(n)`, but technically
 slower. Reservoir Sampling brings it down to `O(0.5n)` (still asymptotically `O(n)`).
+
+Another thing I'd like to jot down here is that I spent a lot more time today than
+yesterday on structuring my tests. Not sure how valuable that is while
+doing this 100 day challenge, but it was an interesting experience.
+I think with data structures, it's pretty difficult to "quickly write tests"
+and make sure they're comprehensive, but concise.
