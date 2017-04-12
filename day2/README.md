@@ -35,7 +35,7 @@ python library that's implemented using a [Mersenne Twister](https://en.wikipedi
 generator that'll suit my needs just fine.
 
 ## Code ##
-(Python)[./randomnode.py]
+[Python](./randomnode.py)
 
 ## Follow up ##
 
