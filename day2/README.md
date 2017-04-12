@@ -30,9 +30,8 @@ cryptographic security.
 
 [..2 hours of wikipedia surfing later..]
 
-In that case, there is the [random](https://docs.python.org/2/library/random.html#random.random)
-python library that's implemented using a [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
-generator that'll suit my needs just fine.
+Something that'll suit my needs just fine is the [random](https://docs.python.org/2/library/random.html#random.random)
+python library that's implemented using a [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister).
 
 ## Code ##
 [Python](./randomnode.py)
@@ -43,9 +42,14 @@ I noticed this Leetcode user's (and many others') [solution](https://discuss.lee
 (Reservoir Sampling)[https://en.wikipedia.org/wiki/Reservoir_sampling]
 to randomly choose an element from the linked list. It's an optimization
 on my solution because in my code I first count how many elements `n`
-there are, and then use that `n` to generate a random number, so my total
-runtime is `O(1.5n)`, which is still asymptotically `O(n)`, but technically
-slower. Reservoir Sampling brings it down to `O(0.5n)` (still asymptotically `O(n)`).
+there are, and then use that `n` to generate a random number and then
+iterate through the linked list to find the element, so my total
+runtime is `O(n)` setup and `O(0.5n)` on average
+for each `getRandom` call, which is still asymptotically `O(n)`,
+but technically slower. Reservoir Sampling is just a flat `O(n)`
+for each call, since you don't know `n` ahead of time and have to
+iterate through each of the elements, swapping out which one you
+keep to return in the end.
 
 Another thing I'd like to jot down here is that I spent a lot more time today than
 yesterday on structuring my tests. Not sure how valuable that is while

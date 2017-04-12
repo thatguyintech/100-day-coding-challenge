@@ -28,11 +28,9 @@ class Solution(object):
         Returns a random node's value.
         :rtype: int
         """
-        index = random.randint(0, self.numNodes-1)
         p = self.head
-        while index > 0:
+        for i in xrange(random.randint(0, self.numNodes-1)):
             p = p.next
-            index -= 1
         return p.val
 
 ## Helpers ##
