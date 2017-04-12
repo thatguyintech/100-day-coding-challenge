@@ -1,6 +1,6 @@
 Question of the day: https://leetcode.com/problems/linked-list-random-node/#/description
 
-First draft of thought process:
+## Ideas ##
 
 Two solutions come to mind immediately, with a tradeoff between
 space and time (that's always the tradeoff).
@@ -36,7 +36,7 @@ python library that's implemented using a [Mersenne Twister](https://en.wikipedi
 ## Code ##
 [Python](./randomnode.py)
 
-## Follow up ##
+## Discussion ##
 
 I noticed this Leetcode user's (and many others') [solution](https://discuss.leetcode.com/topic/53738/o-n-time-o-1-space-java-solution) that uses the idea of
 (Reservoir Sampling)[https://en.wikipedia.org/wiki/Reservoir_sampling]

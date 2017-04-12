@@ -26,3 +26,5 @@ I can have that extra `prevMin` pointer.
 
 ## Code ##
 [Python](./minstack.py)
+
+## Discussion ##
