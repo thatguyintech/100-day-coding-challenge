@@ -19,56 +19,56 @@ is the next node in the preorder traversal of the tree.
 When I have a complete tree like this:
 
     1 
-   / \
-  2   5
- / \ / \
-3  4 6  7
+   / \ 
+  2   5 
+ / \ / \ 
+3  4 6  7 
 
 What I would do if I could cut and paste nodes of the tree into
 different locations:
     
 
-    1    
-   / \   
+    1  
+   / \     
   2   5  
- / \ / \ 
-3  4 6  7
+ / \ / \  
+3  4 6  7  
 
       1    
-     / \   
+     / \    
     2   5  
    /   / \ 
-  3    6  7
- /
-4
+  3    6  7  
+ /  
+4  
 
-          1
-         /
-        2
-       /
-      3
-     /
-    4
-   /
-  5
- / \
-6   7
+          1  
+         /  
+        2  
+       /  
+      3  
+     /  
+    4  
+   /  
+  5  
+ / \  
+6   7  
 
 
-            1
-           /
-          2
-         /
-        3
-       /
-      4
-     /
-    5
-   /
-  6
- /
-7
-
+            1  
+           /  
+          2  
+         /  
+        3  
+       /  
+      4  
+     /  
+    5  
+   /  
+  6  
+ /  
+7  
+  
 but this is a linked list leaning to the left. The sample output
 has a linked list leaning towards the right. One thing I could do is
 to go down the linked list and swap the direction on each level.
