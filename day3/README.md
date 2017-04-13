@@ -17,31 +17,36 @@ What I need to do is to rearrange so that each node's right child
 is the next node in the preorder traversal of the tree.
 
 When I have a complete tree like this:
-
+```
     1 
    / \ 
   2   5 
  / \ / \ 
 3  4 6  7 
+```
 
 What I would do if I could cut and paste nodes of the tree into
 different locations:
     
-
+```
     1  
    / \     
   2   5  
  / \ / \  
 3  4 6  7  
+```
 
+```
       1    
      / \    
     2   5  
    /   / \ 
   3    6  7  
  /  
-4  
+4
+```
 
+```
           1  
          /  
         2  
@@ -53,8 +58,9 @@ different locations:
   5  
  / \  
 6   7  
+```
 
-
+```
             1  
            /  
           2  
@@ -67,7 +73,8 @@ different locations:
    /  
   6  
  /  
-7  
+7
+```
   
 but this is a linked list leaning to the left. The sample output
 has a linked list leaning towards the right. One thing I could do is
@@ -78,11 +85,13 @@ to the right to begin with? Let's try that.
 
 Looking at the original tree, where `node` is the root node with `val` 1:
 
+```
     1 
    / \
   2   5
  / \ / \
 3  4 6  7
+```
 
 I actually want to do something like this:
 
