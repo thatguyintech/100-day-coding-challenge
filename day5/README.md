@@ -26,3 +26,11 @@ solution.
 [Python](./pathsum.py)
 
 ## Follow up ##
+
+TODO: (suggestions from @jabagawee) for a challenge,
+try this with BFS as well. or change the problem description
+from "root-to-leaf path" to "any path starting from the root"
+or "any path traveling down the tree" or "any path at all"
+
+or generalize to any n-ary tree. or any graph. then start
+doing runtime and space analyses on each of these solutions.
