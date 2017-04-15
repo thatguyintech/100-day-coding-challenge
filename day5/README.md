@@ -27,7 +27,7 @@ solution.
 
 ## Follow up ##
 
-TODO: (suggestions from @jabagawee) for a challenge,
+TODO: (suggestions from [@jabagawee](https://github.com/alberthu16/100-day-coding-challenge/pull/2)) for a challenge,
 try this with BFS as well. or change the problem description
 from "root-to-leaf path" to "any path starting from the root"
 or "any path traveling down the tree" or "any path at all"
