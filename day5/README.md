@@ -10,8 +10,7 @@ The tree isn't organized, i.e. it's not a binary search
 tree. That means I'll have to do some kind of extensive
 searching, and since I want a path, DFS should work.
 
-In
-the case of DFS, I can implement it recursively such that
+In the case of DFS, I can implement it recursively such that
 the base case is if I'm at a leaf node, check if the sum
 I'm searching for is equal to the value of this node.
 Otherwise, recurse on the node's children and subtract
