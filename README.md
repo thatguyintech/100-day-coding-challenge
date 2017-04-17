@@ -13,4 +13,6 @@ Challenges by day:
 [Day 2](./day2) - Return a random node from a linked list  
 [Day 3](./day3) - Flatten a Binary Tree into a linked list  
 [Day 4](./day4)  
-[Day 5](./day5) - Check if a path with sum exists in Binary Tree
+[Day 5](./day5) - Check if a path with sum exists in Binary Tree  
+[Day 6](./day6) - Implement DFS / BFS  
+[Day 7](./day7) - Check if two elements in an array can pair to equal a sum (Two Sum)  
