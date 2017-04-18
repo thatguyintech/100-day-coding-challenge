@@ -11,7 +11,9 @@ def alienAlphabet(orderedWords):
 
     # linearization of a DAG
     graph = createDependencyGraph(orderedWords)
+    print("graph", graph)
     alphabet = topSort(graph)
+    print("alphabet", alphabet)
 
     return "".join(alphabet)
 
@@ -30,6 +32,8 @@ def createDependencyGraph(orderedWords):
 
             if letter not in graph:
                 graph[letter] = []
+            if otherLetter not in graph:
+                graph[otherLetter] = []
 
             if letter != otherLetter:
                 graph[letter].append(otherLetter)
@@ -115,7 +119,9 @@ def testRemoveDups():
 
 def testAlienAlphabet():
     assert(alienAlphabet([]) == '')
-    assert(alienAlphabet(['baa']) == 'ba')
+    assert(alienAlphabet(['baa']) == 'ba') # might be wrong assumption here
+    assert(alienAlphabet(['baa', 'baa']) == 'ba') # might be the wrong assumption here
+    assert(alienAlphabet(['abcd', 'baa', 'c', 'd', 'e']) == 'abcde')
     assert(alienAlphabet(['baa', 'abcd', 'abca', 'cab', 'cad']) == 'bdac')
 
 def tests():

@@ -59,3 +59,10 @@ if I keep going at this rate. 1) I need to get faster at coding
 and stop freezing up when I'm sensing some friction in my thought
 process and 2) this was a really good review of linearization.
 
+Also, I'm currently not accounting for edge cases like when I have
+letters that I don't know where to place in the order. Currently
+I just tack them onto the end of the alphabet. If I wanted to make
+this a little more useful, instead of just tacking it on, I'd
+output a separate set of unclassified letters.
+
+
