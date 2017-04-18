@@ -11,9 +11,7 @@ def alienAlphabet(orderedWords):
 
     # linearization of a DAG
     graph = createDependencyGraph(orderedWords)
-    print("graph", graph)
     alphabet = topSort(graph)
-    print("alphabet", alphabet)
 
     return "".join(alphabet)
 
