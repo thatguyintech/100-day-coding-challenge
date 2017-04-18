@@ -53,4 +53,9 @@ space complexity is `O(letters)`.
 
 ## Follow up
 
+This code took me sooooo long to write. Definitely not sustainable
+for me to code problems of this size with this amount of testing,
+if I keep going at this rate. 1) I need to get faster at coding
+and stop freezing up when I'm sensing some friction in my thought
+process and 2) this was a really good review of linearization.
 
