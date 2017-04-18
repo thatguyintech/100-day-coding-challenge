@@ -15,3 +15,42 @@ You can conclude the ordering of the alphabet is
 Write a program to determine the lexicographical
 ordering for any input list.
 
+## Ideas
+
+This alphabet ordering reminds me of depency graphs. Based
+on the words list, some letters come before other letters.
+Some letters have multiple letters that precede it in the 
+words list. The trick is to find how those letters relate to
+each other.
+
+If I can represent the words/letters as a dependency graph,
+I can then linearize the graph to get the final lexicographical
+ordering of the letters.
+
+I can represent the letters in each of the words in the word
+list as a node in a dependency graph. To construct this graph,
+I look at pairs of neighboring words and compare corresponding
+letters from left to right in the word. If a letter in the 
+left word is different than the letter in the right word, I
+know that the first letter comes before the second letter, so
+in my dependency graph I'll add a directed edge going from
+the first letter to the second letter. Then I shift over one
+pair to move on to the next two words to compare. If the
+letters are the same, I compare the next pair of letters. In
+the worst case, this process will iterate over all but two
+of the words in the word list (assuming len > 2) twice, which
+makes the runtime `O(letters)` where `letters` is the total
+number of nodes in the dependency graph.
+
+Once the graph is constructed, running topological sort, aka
+a DFS on the graph to linearize the dependencies takes
+`O(letters)`. Thus the overall runtime is `O(letters)` and the
+space complexity is `O(letters)`.
+
+## Code
+
+[Python](./alienalphabet.py)
+
+## Follow up
+
+
