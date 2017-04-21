@@ -41,7 +41,7 @@ Here are some sample inputs and outputs:
 | inputs | outputs |
 |--------|---------|
 |`[[]]`  |         |
-|`[1,2]` | ` 1 2 ` |
+|`[[1,2]]` | ` 1 2 ` |
 |`[[1],`<br>`[2],`<br>`[3],`<br>`[4]]` | ` 1 2 3 4 ` |
 |`[[8, 1],`<br>`[7, 2],`<br>`[6, 3],`<br>`[5, 4]]` | ` 1 2 3 4 5 6 7 8` |
 
@@ -72,14 +72,7 @@ and vice versa. Repeat this cycle until all the elements in the matrix have been
 printed, and watch out for the off-by-ones when checking for the
 boundaries of the matrix.
 
-Let's have a direction variable `dir` which can be one of four integers  
-`0` - right  
-`1` - down  
-`2` - left  
-`3` - up  
-we'll switch directions by `dir = (dir+1)%4`
-
-We also need boundary variables that will tell us when it's necessary
+We need boundary variables that will tell us when it's necessary
 to change directions.
 
 We'll have a big while loop and four while loops inside the big one.
@@ -91,3 +84,4 @@ Aiight let's do this:
 
 ## Code
 
+[Python](./spiralMatrix.py)
