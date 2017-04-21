@@ -57,10 +57,37 @@ cursor comprised of a row index `row` and column index `col`, and we
 also need to be aware of the current direction we're iterating in so
 that it's possible to change directions.
 
+Here's the strategy:
+
+Start at `(0,0)` with direction `right`. Keep adding to the row index
+until we hit the end of the row. Switch the direction to the next
+direction, `down`. Keep adding to the column index until we hit the end
+of the column. Switch the direction to the next direction, `left`.
+Keep subtracting from the row index until we hit the beginning of the
+row. Switch the direction to the next direction, `up`. Keep subtracting
+from the column index until we hit the beginning of the column.
+
+Every time we finish a row, we have one less column index to go through,
+and vice versa. Repeat this cycle until all the elements in the matrix have been
+printed, and watch out for the off-by-ones when checking for the
+boundaries of the matrix.
+
 Let's have a direction variable `dir` which can be one of four integers  
 `0` - right  
 `1` - down  
 `2` - left  
 `3` - up  
 we'll switch directions by `dir = (dir+1)%4`
+
+We also need boundary variables that will tell us when it's necessary
+to change directions.
+
+We'll have a big while loop and four while loops inside the big one.
+The big while loop breaks only when there are no possible moves to make
+within the current boundaries. The four while loops inside loop through
+the four different directions.
+
+Aiight let's do this:
+
+## Code
 
