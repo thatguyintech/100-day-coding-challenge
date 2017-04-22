@@ -16,3 +16,4 @@ Challenges by day:
 [Day 5](./day5) - Check if a path with sum exists in Binary Tree  
 [Day 6](./day6) - Implement DFS / BFS  
 [Day 7](./day7) - Check if two elements in an array can pair to equal a sum (Two Sum)  
+[Day 8](./day8) - Decode an alien alphabet
