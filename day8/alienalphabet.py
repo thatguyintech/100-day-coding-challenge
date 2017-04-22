@@ -5,13 +5,13 @@
 def alienAlphabet(orderedWords):
     # edge cases
     if len(orderedWords) <= 0:
-        return ''
+        return ""
     if len(orderedWords) == 1:
-        return removeDups(orderedWords[0])
+        return "".join(set(orderedWords[0]))
 
     # linearization of a DAG
     graph = createDependencyGraph(orderedWords)
-    alphabet = topSort(graph)
+    alphabet = topologicalSort(graph)
 
     return "".join(alphabet)
 
@@ -20,19 +20,12 @@ def alienAlphabet(orderedWords):
 #############
 
 def createDependencyGraph(orderedWords):
-    graph = {}
-    for i, word in enumerate(orderedWords[:-1]):
-        nextWord = orderedWords[i+1]
-        shorter = min(len(word), len(nextWord))
-        for j in xrange(shorter):
-            letter = word[j]
-            otherLetter = nextWord[j]
+    # prepoulate graph with all letters
+    graph = {letter: [] for word in orderedWords for letter in word}
 
-            if letter not in graph:
-                graph[letter] = []
-            if otherLetter not in graph:
-                graph[otherLetter] = []
-
+    # add dependencies
+    for word, nextWord in zip(orderedWords, orderedWords[1:]):
+        for letter, otherLetter in zip(word, nextWord):
             if letter != otherLetter:
                 graph[letter].append(otherLetter)
                 break
@@ -47,52 +40,36 @@ def createDependencyGraph(orderedWords):
 # nodes are from outgoing edges
 #
 # this function returns the resulting linearization in a list
-def topSort(graph):
-    sources = getSources(graph)
+def topologicalSort(graph):
     visited = set()
     postOrderStack = []
 
-    def dfs(start, graph, visitedSet, postOrderStack):
-        visitedSet.add(start)
+    def dfs(start):
+        visited.add(start)
 
         # recurse
         for child in graph[start]:
-            if child not in visitedSet:
-                dfs(child, graph, visitedSet, postOrderStack)
+            if child not in visited:
+                dfs(child)
 
         # done exploring your children, add yourself to the postorder
         postOrderStack.append(start)        
 
     # run dfs from all source nodes
+    sources = getSources(graph)
     for node in sources:
-        dfs(node, graph, visited, postOrderStack)
+        dfs(node)
 
-    return postOrderStack[::-1]
+    # reversed returns an iterator
+    return reversed(postOrderStack)
 
+# Source nodes are ones that don't have any incoming edges
 def getSources(graph):
-    # initialize all nodes to 0
-    nodes = {k:0 for k in graph.keys()}
-
-    # mark non-source nodes as 1
-    for key in graph.keys():
-        for node in graph[key]:
-            nodes[node] = 1
-
-    # only the nodes marked `0` are sources
-    sourcePairs = filter(lambda pair: pair[1] == 0, nodes.items())
-    return [x for x,y in sourcePairs]
-
-def removeDups(s):
-    # python's `set` implementation is basically a dictionary with
-    # dummy values, that's why adding elements and finding elements
-    # are constant time : http://markmail.org/message/ktzomp4uwrmnzao6
-    seen = set()
-    ret = list()
-    for char in s:
-        if char not in seen:
-            ret.append(char)
-            seen.add(char)
-    return "".join(ret)
+    nonSourceNodes = set()
+    for nodeList in graph.values():
+        for node in nodeList:
+            nonSourceNodes.add(node)
+    return set(graph.keys()) - nonSourceNodes
 
 ###########
 ## Tests ##
@@ -100,32 +77,31 @@ def removeDups(s):
 
 def testGetSources():
     graph = {'b':['a','d'], 'a':['c'], 'c':[], 'd':['a']}
-    assert(getSources(graph) == ['b'])
+    assert getSources(graph) == set(['b'])
 
-def testTopSort():
+def testTopologicalSort():
     graph = {'b':['a','d'], 'a':['c'], 'c':[], 'd':['a']}
-    assert(topSort(graph) == ['b','d','a','c'])
-
-def testRemoveDups():
-    assert(removeDups('') == '')
-    assert(removeDups('aaa') == 'a')
-    assert(removeDups('aba') == 'ab')
-    assert(removeDups('aab') == 'ab')
-    assert(removeDups('baa') == 'ba')
-    assert(removeDups('a') == 'a')
-    assert(removeDups('asdfasdfasdfasdf') == 'asdf')
+    topologicalSortResult = topologicalSort(graph)
+    assert topologicalSortResult.next() == 'b'
+    assert topologicalSortResult.next() == 'd'
+    assert topologicalSortResult.next() == 'a'
+    assert topologicalSortResult.next() == 'c'
 
 def testAlienAlphabet():
-    assert(alienAlphabet([]) == '')
-    assert(alienAlphabet(['baa']) == 'ba') # might be wrong assumption here
-    assert(alienAlphabet(['baa', 'baa']) == 'ba') # might be the wrong assumption here
-    assert(alienAlphabet(['abcd', 'baa', 'c', 'd', 'e']) == 'abcde')
-    assert(alienAlphabet(['baa', 'abcd', 'abca', 'cab', 'cad']) == 'bdac')
+    assert alienAlphabet([]) == ''
+    assert set(alienAlphabet(['baa'])) == set('ba') # might be wrong assumption here
+    assert alienAlphabet(['baa', 'baa']) == 'ba' # might be the wrong assumption here
+    assert alienAlphabet(['abcd', 'baa', 'c', 'd', 'e']) == 'abcde'
+    assert alienAlphabet(['baa', 'abcd', 'abca', 'cab', 'cad']) == 'bdac'
 
 def tests():
     testGetSources()
-    testTopSort()
-    testRemoveDups()
+    testTopologicalSort()
     testAlienAlphabet()
 
-tests()
+def main():
+    tests()
+
+if __name__ == '__main__':
+    main()
+
