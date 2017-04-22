@@ -40,6 +40,20 @@ What is the maximum such speed that she can choose?
 To get an intuition for the math behind this problem, let's draw
 some horses.
 
+(horse drawing tba)
+
+The crucial idea that took me a couple of tries to validate is that
+the horse that takes the longest time to reach the end is the 
+horse that Annie must be aware of not crossing. If we get the time
+of that horse, then we can calculate the average pace Annie should
+travel at.
+
+`(Annie's pace) = (total distance) / (slowest horse's completion time)`
+
+The time it would take to calculate the slowest horse's completion
+time would be `O(n)` where `n` is the number of horses on the path.
+
 ## Code
 
 [Python](./cruise-control.py)
+
