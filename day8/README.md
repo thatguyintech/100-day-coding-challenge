@@ -35,8 +35,8 @@ pair to move on to the next two words to compare. If the
 letters are the same, I compare the next pair of letters. In
 the worst case, this process will iterate over all but two
 of the words in the word list (assuming len > 2) twice, which
-makes the runtime `O(letters)` where `letters` is the total
-number of nodes in the dependency graph.
+makes the runtime `O(words)`, which may or may not be a lot
+longer than the number of nodes in the dependency graph.
 
 Once the graph is constructed, running topological sort, aka
 a DFS on the graph to topologically sort the dependencies takes
