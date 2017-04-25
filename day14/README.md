@@ -46,7 +46,7 @@ to be the width and height of the 2D pattern. So then if the pattern
 matches, there would be an additional `O(pWidth*pHeight)` per location
 with a possible start point, which excludes parts of the matrix. In the
 worst case, the runtime to this brute force solution is
-`O((width - pWidth) * (height - pHeight) * pWidth * pHeight)`. I do a
+`O((width - pWidth + 1) * (height - pHeight + 1) * pWidth * pHeight)`. I do a
 subtraction which is key, because in a matrix like this:
 
 ```python
