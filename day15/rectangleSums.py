@@ -11,12 +11,12 @@ def rectangleSum(sumsMatrix, topLeft, bottomRight):
     bottomRightX, bottomRightY = bottomRight
 
     # negative rectangle, default to 0
-    if topLeftX < bottomRightX or topLeftY > bottomRightY:
+    if topLeftX > bottomRightX or topLeftY > bottomRightY:
         return 0
 
     # bigRectSum is the sum of the rectangle formed by the 
     # origin and the bottom right coordinate
-    bigRectSum = sumsMatrix[bottomRightX][bottomRight]
+    bigRectSum = sumsMatrix[bottomRightX][bottomRightY]
 
     # we're done if the top left coordinate is the origin
     if topLeftX == 0 and topLeftY == 0:
@@ -105,7 +105,7 @@ def testRectangleSum():
 
     l0 = (0,0)
     r0 = (0,0)
-    assert rectangleSum(sumsMatrix, l0, r0) == 0
+    assert rectangleSum(sumsMatrix, l0, r0) == 1
 
     l1 = (0,0)
     r1 = (-1,0)
@@ -125,10 +125,15 @@ def testRectangleSum():
 
     l5 = (1,1)
     r5 = (2,2)
-    assert rectangleSum(sumsMatrix, l3, r3) == 18
+    assert rectangleSum(sumsMatrix, l5, r5) == 10
+
+    l6 = (0,0)
+    r6 = (2,2)
+    assert rectangleSum(sumsMatrix, l6, r6) == 18
 
 def main():
     testCacheSums()
+    testRectangleSum()
 
 if __name__ == "__main__":
     main()
