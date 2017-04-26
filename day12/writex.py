@@ -2,8 +2,8 @@ def writeX(matrix):
     rowsToChange = set()
     colsToChange = set()
 
-    height = len(matrix[0])
-    width = len(matrix)
+    height = len(matrix)
+    width = len(matrix[0])
 
     for i in xrange(height):
         for j in xrange(width):
@@ -69,5 +69,10 @@ def tests():
           ['x','x','x','x','x'],
           ['x','-','-','x','-']]
     assert writeX(t6) == o6
+
+    # flat matrix
+    t7 = [['-','x']]
+    o7 = [['x','x']]
+    assert writeX(t7) == o7
 
 tests()
