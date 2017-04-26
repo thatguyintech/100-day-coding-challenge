@@ -47,4 +47,9 @@ other rectangles.
 
 ## Code
 
+[Python](./rectangleSums.py)
+
 ## Followup
+
+Pretty cool dynamic programming question! Here's some discussion
+on leetcode: https://leetcode.com/articles/range-sum-query-2d-immutable/#approach-4-caching-smarter-accepted
