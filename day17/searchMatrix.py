@@ -20,7 +20,7 @@ def searchMatrix(matrix, value):
         middleValue = matrix[rowIndex][columnIndex]
 
         if value == middleValue:
-            return coordinate
+            return True
         elif value < middleValue:
             upperBound = middleIndex
         elif value > middleValue:
