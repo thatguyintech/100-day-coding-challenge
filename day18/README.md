@@ -57,3 +57,10 @@ I'll just implement the binary search by rows solution for now.
 [Ruby](./searchMatrix2.rb)
 
 ## Follow up
+
+I can optimize this approach even further by checking which dimension
+is longer (rows or columns) and doing binary search along the larger
+valued dimension to maximize efficiency.
+
+I'll update this soluiton once I think of an even more optimal approach.
+
