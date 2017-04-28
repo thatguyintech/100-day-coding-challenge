@@ -43,6 +43,19 @@ Output:
 
 ## Ideas
 
+This is like drawing out a contour map. The 0's are the peaks of
+hills and mountains, while the parts of the matrix that are far away
+from any 0's are like the valleys.
+
+We can start from each peak and go outwards. It'd be a BFS-like
+approach. Do a search through the whole matrix once first and find
+where all the 0's are. Add each of those positions into a queue,
+and then use that queue to start off a BFS. During this BFS, we
+check the neighboring cells to see what the minimal value is that
+we can place in this cell.
+
 ## Code
+
+[Ruby](./matrixCountours.rb)
 
 ## Follow up
