@@ -41,6 +41,12 @@ Output:
 1 2 1
 ```
 
+Assumptions we can make:
+
+1. The number of elements of the given matrix will not exceed 10,000.  
+2. There are at least one 0 in the given matrix.  
+3. The cells are adjacent in only four directions: up, down, left and right.  
+
 ## Ideas
 
 This is like drawing out a contour map. The 0's are the peaks of
