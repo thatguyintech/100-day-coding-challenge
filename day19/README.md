@@ -61,7 +61,7 @@ check the neighboring cells to see what the minimal value is that
 we can place in this cell.
 
 This solution is `O(n)` to find the 0s, and then `O(n)` to run the
-BFS. My implementation also requires `O(1)` space, although I think
+BFS. My implementation also requires `O(n)` space, although I think
 it's possible to modify the matrix in-place with some more clever
 checking.
 
