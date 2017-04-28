@@ -1,7 +1,7 @@
 def searchMatrix(matrix, target)
   # the downside to this is that I do a binary search
   # on every row before I return
-  return matrix.map {|row| binarySearch(row, target)}.any? {|result| result == true}
+  matrix.map {|row| binarySearch(row, target)}.any? {|result| result == true}
 end
 
 ###########
@@ -22,7 +22,7 @@ def binarySearch(row, target)
     end
   end
 
-  return false
+  false
 end
 
 #########
