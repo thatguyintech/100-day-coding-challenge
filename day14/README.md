@@ -74,3 +74,13 @@ a very complex problem, now I just have to write the code.
 ## Code
 
 [Python](./2D-pattern-in-matrix.py)
+
+## Follow up
+
+@jjwon0 made a great [observation](https://github.com/alberthu16/100-day-coding-challenge/pull/9#discussion_r113083672)
+that the Knuth-Morris-Pratt linear time string matching algorithm may
+be applied to 2D pattern matching to make this more efficient.
+
+Read the [wikipedia](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+article on the algorithm, and then read this guy's [blog post](http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/)
+on what's going on with the preprocessing step.
