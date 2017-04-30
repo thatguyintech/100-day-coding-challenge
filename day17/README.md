@@ -85,3 +85,8 @@ longer need to use any memory.
 
 ## Follow up
 
+@apengwin mentioned that there is an "interesting variation to this
+problem when the matrix is a [Young tableau](https://en.wikipedia.org/wiki/Young_tableau)"
+
+not sure what this is yet but could be interesting to look into!
+
