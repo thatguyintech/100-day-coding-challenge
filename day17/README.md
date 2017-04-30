@@ -77,7 +77,7 @@ Now that we have a translation mechanism, we can just do binary
 search on the matrix, treating the coordinates like the indices
 of a 1D array.
 
-This solution is `O(logn)` runtime and `O(1)` space since we no
+This solution is `O(log(n*m))` runtime and `O(1)` space since we no
 longer need to use any memory.
 
 ## Code

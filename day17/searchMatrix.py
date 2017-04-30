@@ -34,7 +34,7 @@ def searchMatrix(matrix, value):
     return False
 
 def indexToCoord(index, matrixWidth):
-    return (index/matrixWidth, index%matrixWidth)
+    return (index / matrixWidth, index % matrixWidth)
 
 #########
 # Tests #
