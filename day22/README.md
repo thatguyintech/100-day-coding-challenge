@@ -43,9 +43,23 @@ the permutations, like this:
 [3, 2, 1]
 ```
 
+This solution is `O((spots for the first elem to go in) * (num perms of the remaining list))`
+where `(num perms of the remaining list)` is equal to
+`(spots for the first elem to go in) * (num perms of the remaining list)` recursively.
+So the runtime is `O(n!)`.
+
 ## Code
 
 [Python](permutations.py)
 
 ## Follow up
 
+This procedure has already been implemented in Python's built-in library:
+
+```python
+from itertools import permutations
+
+permutations([1, 2, 3])
+```
+
+https://docs.python.org/2/library/itertools.html#itertools.permutations
