@@ -36,3 +36,8 @@ is `O(n * n!)`.
 [Python](./stringsRearrangement.py)
 
 ## Follow up
+
+Any better way to approach this problem? I think so..
+
+https://en.wikipedia.org/wiki/Hamiltonian_path_problem
+
