@@ -8,7 +8,7 @@ interviewcake, codefights, or different Facebook groups I'm a part of. I'll
 brainstorm solutions, write some code, and discuss tradeoffs. The point is to show
 up every day and **just do it**.
 
-Challenges by day:  
+Challenges by day (4 days missed):  
 [Day 1](./day1) - Design and implement a MinStack  
 [Day 2](./day2) - Return a random node from a linked list  
 [Day 3](./day3) - Flatten a Binary Tree into a linked list  
@@ -28,7 +28,7 @@ Challenges by day:
 [Day 17](./day17) - Search for a value in a matrix  
 [Day 18](./day18) - Search for a value in a matrix pt 2  
 [Day 19](./day19) - Contour Map  
-[Day 20](./day20) -    
+[Day 20](./day20)    
 [Day 21](./day21) - (CodeFights) Helping Stephan  
 [Day 22](./day22) - Permutations of a list  
 [Day 23](./day23) - Strings Rearrangement  
