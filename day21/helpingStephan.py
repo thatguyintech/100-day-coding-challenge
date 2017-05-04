@@ -1,17 +1,5 @@
 def helpingStephan(x, y):
-    xSplit = str(x).split(".")
-    ySplit = str(y).split(".")
-    
-    XdigitsAfterDecimal = "0"
-    if len(xSplit) > 1:
-        XdigitsAfterDecimal = xSplit[1]
-        
-    YdigitsAfterDecimal = "0"
-    if len(ySplit) > 1:
-        YdigitsAfterDecimal = ySplit[1]
-                                      
-                                  
-    digitsAfterDecimal = max(len(XdigitsAfterDecimal), len(YdigitsAfterDecimal))
+    digitsAfterDecimal = 5
                 
     x *= 10**digitsAfterDecimal
     y *= 10**digitsAfterDecimal
@@ -21,13 +9,14 @@ def helpingStephan(x, y):
      
     r = -1
     while r != 0:
-        r = round(a % b, 6) * 1.0
+        r = round(a % b, 6)
         a = b
         b = r
         
     return a / 10**digitsAfterDecimal
 
 def main():
+    assert helpingStephan(1, 1) == 1
     assert helpingStephan(2.4, 4.8) == 2.4
     assert helpingStephan(36.21, 4.19) == 0.01
     assert helpingStephan(4, 6) == 2
