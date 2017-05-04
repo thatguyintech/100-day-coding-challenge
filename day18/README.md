@@ -64,3 +64,8 @@ valued dimension to maximize efficiency.
 
 I'll update this soluiton once I think of an even more optimal approach.
 
+@apengwin says there's a known `O(m + n)` solution to this problem and
+that I should "Think about using the sorted-ness of the matrix to my
+advantage". 
+
+
