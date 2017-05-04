@@ -32,22 +32,25 @@ def createGraph(inputTuples):
 def derp(graph, startTuple, visited=set()):
     # do dfs
     for vertexTuple in graph[startTuple]:
+        print vertexTuple
         if vertexTuple not in visited:
             visited.add(vertexTuple)
             if derp(graph, vertexTuple, visited):
                 return True
-
+    print visited
+    
+    if len(visited) == len(graph):
+        return True
     return False
 
 def hamiltonianPath(graph):
     if len(graph) == 0:
         return True
 
-    visited = set()
+    print graph
     for node in graph:
-        if node not in visited and derp(graph, node, visited):
+        if derp(graph, node):
             return True
-        visited.add(node)
 
     return False
 
