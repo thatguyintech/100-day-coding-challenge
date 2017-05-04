@@ -9,29 +9,53 @@ def stringsRearrangement(inputArray):
 def neighborsDifferByOne(inputArray):
     if len(inputArray) <= 1:
         return True
-    return differByOne(inputArray[0], inputArray[1]) and neighborsDifferByOne(inputArray[2:])
+    return differByOne(inputArray[0], inputArray[1]) and neighborsDifferByOne(inputArray[1:])
 
 def differByOne(word, anotherWord):
-    if len(word) != len(anotherWord):
-        return False
-
     differencesCount = 0
     for i in xrange(len(word)):
-        if word[i] != anotherWord[j]:
+        if word[i] != anotherWord[i]:
             differencesCount += 1
+        if differencesCount > 1:
+            return False
 
-    if differencesCount == 0 or differencesCount >= 2:
-        return False
+    return differencesCount == 1
 
-    return True
+def testDifferByOne():
+    assert not differByOne("", "")
+    assert not differByOne("a", "a")
+    assert not differByOne("aaa", "aaa")
+    assert not differByOne("abcdeff", "abcedff")
+    assert differByOne("a", "b")
+    assert differByOne("abc", "abb")
+    assert differByOne("abc", "bbc")
+    assert differByOne("abcdefg", "abcdefz")
 
+def testNeighborsDifferByOne():
+    assert neighborsDifferByOne([])
+    assert neighborsDifferByOne([""])
+    assert neighborsDifferByOne(["a", "b"])
+    assert neighborsDifferByOne(["a", "b", "c"])
+    assert neighborsDifferByOne(["ab", "bb"])
+    assert neighborsDifferByOne(["ab", "bb", "bc"])
+    assert neighborsDifferByOne(["ab", "bb", "bc", "ba"])
+    assert neighborsDifferByOne(["abc", "bbc", "bac", "bad"])
+    assert not neighborsDifferByOne(["a", "a"])
+
+def testStringsRearrangement():
+    assert stringsRearrangement([])
+    assert not stringsRearrangement(["aba", "bbb", "bab"])
+    assert stringsRearrangement(["ab", "bb", "aac"])
+    assert not stringsRearrangement(["qq", "qq", "qq"])
+    assert stringsRearrangement(["aaa", "aba", "aaa", "aba", "aaa"])
+    assert not stringsRearrangement(["ab", "ad", "ef", "eg"])
+    assert stringsRearrangement(["abc", "abx", "axx", "abx", "abc"])
+    assert stringsRearrangement(["f", "g", "a", "h"])
 
 def main():
-    assert stringsRearrangement([], True)
-    assert stringsRearrangement(["aba", "bbb", "bab"], False)
-    assert stringsRearrangement(["ab", "bb", "aa"], True)
-    assert stringsRearrangement(["qq", "qq", "qq"], False)
-    assert stringsRearrangement(["aaa", "aba", "aaa", "aba", "aaa"], True)
-    assert stringsRearrangement(["ab", "ad", "ef", "eg"], False)
-    assert stringsRearrangement(["abc", "abx", "axx", "abx", "abc"], True)
-    assert stringsRearrangement(["f", "g", "a", "h"], True)
+    testDifferByOne()
+    testNeighborsDifferByOne()
+    testStringsRearrangement()
+
+if __name__ == "__main__":
+    main()
