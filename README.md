@@ -32,5 +32,6 @@ Challenges by day (4 days missed):
 [Day 21](./day21) - (CodeFights) Helping Stephan  
 [Day 22](./day22) - Permutations of a list  
 [Day 23](./day23) - Strings Rearrangement  
+[Day 24](./day24) - Strings Rearrangement (backtracking)  
 
 
