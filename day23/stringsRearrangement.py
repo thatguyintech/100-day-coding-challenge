@@ -6,20 +6,18 @@ def stringsRearrangement(inputArray):
             return True 
     return False
 
+# [a, b, c, d, e]
+# compare a to b, b to c, c to d, d to e
+# return true if each neighbor pair differs by exactly one char
 def neighborsDifferByOne(inputArray):
     if len(inputArray) <= 1:
         return True
     return differByOne(inputArray[0], inputArray[1]) and neighborsDifferByOne(inputArray[1:])
 
+# compare each character in each word string,
+# return True only if there is one exact difference
 def differByOne(word, anotherWord):
-    differencesCount = 0
-    for i in xrange(len(word)):
-        if word[i] != anotherWord[i]:
-            differencesCount += 1
-        if differencesCount > 1:
-            return False
-
-    return differencesCount == 1
+    return sum(c1 != c2 for c1, c2 in zip(word, anotherWord)) == 1
 
 def testDifferByOne():
     assert not differByOne("", "")
