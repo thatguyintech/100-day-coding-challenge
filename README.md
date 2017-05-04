@@ -21,4 +21,16 @@ Challenges by day:
 [Day 10](https://www.instagram.com/p/BTFtoizF4Iw/)  
 [Day 11](./day11) - Print the contents of a matrix in a spiral  
 [Day 12](./day12) - Overwrite matrix spots with `x`  
+[Day 13](./day13) - (Google Codejam) Cruise control  
+[Day 14](./day14) - Pattern matching, find a 2D pattern within a matrix  
+[Day 15](./day15) - Rectangle sums  
+[Day 16](./day16) - Print the contents of a matrix in a spiral pt 2  
+[Day 17](./day17) - Search for a value in a matrix  
+[Day 18](./day18) - Search for a value in a matrix pt 2  
+[Day 19](./day19) - Contour Map  
+[Day 20](./day20) -    
+[Day 21](./day21) - (CodeFights) Helping Stephan  
+[Day 22](./day22) - Permutations of a list  
+[Day 23](./day23) - Strings Rearrangement  
+
 
