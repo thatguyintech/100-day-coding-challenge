@@ -22,3 +22,16 @@ Example
 For `num = 5` and `prime = 5`, the output should be
 
 `countingBinomialCoefficient(num, prime) = 17`.
+
+## Ideas
+
+Brute force: Calculate Pascal's Triangle, row by row, and keep a counter on how many are
+not divisible by `prime`.
+
+`O(n<sup>2</sup>)` runtime, `O(n)` space, where `n` is the number of binomial coefficients.
+
+## Code
+
+[Python](./countingBinomialCoefficient.py)
+
+## Follow up
