@@ -35,3 +35,8 @@ not divisible by `prime`.
 [Python](./countingBinomialCoefficient.py)
 
 ## Follow up
+
+Too bad the brute force is too slow for calculations on like 10 million rows.
+Here's a trick: https://cjordan.github.io/2013/12/29/solving-project-euler-148/#fnref:3
+
+FML math is hard
