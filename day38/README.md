@@ -82,3 +82,60 @@ If some kind of ordering is required, i.e. max or min ordering, a heap is an
 efficient way to maintain that ordering even when elements are being deleted
 and added. The tree structure of the heap allows you to find elements in
 `O(logn)` time rather than `O(n)` time like in a normal array or linked list.
+
+Some more thinking around heapify, aka just cram an unsorted array into
+a binary tree, and then compare and swap unordered parent-children pairs:
+
+arr = [4, 5, 7, 3, 9, 6, 1]
+
+        4
+       / \
+      5   7 
+     / \ / \
+    3  9 6  1
+
+len = 7
+first parent = 7/2 = 3
+index = 3-1
+arr[index] == 7
+
+7's children: arr[2*index + 1], arr[2*index + 2] aka 6, 1
+1 < 6
+
+        4
+       / \
+      5   1 
+     / \ / \
+    3  9 6  7
+
+next parent -> index -= 1
+arr[index] = 5
+
+5's children: 3, 9
+3 < 9
+
+        4
+       / \
+      3   1 
+     / \ / \
+    5  9 6  7
+
+next parent -> index -= 1
+arr[index] = 4
+
+4's children: 3, 1
+1 < 3
+
+        1
+       / \
+      3   4 
+     / \ / \
+    5  9 6  7
+
+done.
+
+Need to do one comparison set for each parent node, and then done. So O(n) time!
+
+
+
+

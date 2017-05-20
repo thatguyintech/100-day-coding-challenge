@@ -7,6 +7,7 @@ class MinHeap:
         if len(arr) > 0:
             self.heapify(arr)
 
+    # runtime: O(logn) aka the height of the heap
     def getMin(self):
         if self.size > 0:
             ret = self.heap.popleft()
@@ -16,19 +17,23 @@ class MinHeap:
                 self.bubbleDown()
             return ret
 
+    # runtime: O(1) 
     def peek(self):
         if self.size > 0:
             return self.heap[0]
 
+    # runtime: O(logn) aka the height of the tree
     def push(self, val):
         self.size += 1
         self.heap.append(val)
         self.bubbleUp()
 
+    # runtime: O(nlogn)
     def heapify(self, arr):
         for item in arr:
             self.push(item)
 
+    # runtime: O(1)
     def isEmpty(self):
         return self.size == 0
 
