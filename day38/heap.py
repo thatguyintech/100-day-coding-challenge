@@ -5,6 +5,7 @@ class MinHeap:
         self.heap = deque()
         self.size = 0
         if len(arr) > 0:
+            self.size = len(arr)
             self.heapify(arr)
 
     # runtime: O(logn) aka the height of the heap
@@ -14,7 +15,7 @@ class MinHeap:
             self.size -= 1
             if self.size > 0:
                 self.heap.appendleft(self.heap.pop())
-                self.bubbleDown()
+                self.bubbleDown(0)
             return ret
 
     # runtime: O(1) 
@@ -22,7 +23,7 @@ class MinHeap:
         if self.size > 0:
             return self.heap[0]
 
-    # runtime: O(logn) aka the height of the tree
+    # runtime: O(logn) aka the height of the heap
     def push(self, val):
         self.size += 1
         self.heap.append(val)
@@ -30,16 +31,17 @@ class MinHeap:
 
     # runtime: O(nlogn)
     def heapify(self, arr):
-        for item in arr:
-            self.push(item)
+        self.heap = deque(arr)
+        for i in xrange(self.size-1, -1, -1):
+            self.bubbleDown(i)
 
     # runtime: O(1)
     def isEmpty(self):
         return self.size == 0
 
-    def bubbleDown(self):
+    def bubbleDown(self, index):
         if self.size > 0:
-            i = 0
+            i = index
             h = self.heap
             withinBounds = 2*i + 2 < self.size
             while withinBounds and (h[i] > h[2*i + 1] or h[i] > h[2*i + 2]):
