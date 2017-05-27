@@ -41,3 +41,18 @@ Any better way to approach this problem? I think so..
 
 https://en.wikipedia.org/wiki/Hamiltonian_path_problem
 
+also check out this minified and slightly worse runtime version LOL (180 characters)
+
+```python
+from itertools import permutations as p
+
+def stringsRearrangement(i):
+    return any(n(x) for x in p(i))
+
+def n(i):
+    return len(i) <= 1 or (d(i[0], i[1]) and n(i[1:]))
+
+def d(w, a):
+    return sum(i != j for i, j in zip(w, a)) == 1
+```
+
