@@ -46,12 +46,12 @@ Challenges by day (12 days missed):
 [Day 35](./day35) - Reverse a string, part 2  
 [Day 36](./day36) - Longest Consecutive Sequence  
 [Day 37](./day37) - Top K Frequent  
-[Day 38](./day38) - Implement a min heap
-[Day 39](./day38) - Implement a min heap better
-[Day 40](./day38) - Implement a min heap real good
-[Day 41](./day41) - Use heap implementation to redo Top K Frequent
+[Day 38](./day38) - Implement a min heap  
+[Day 39](./day38) - Implement a min heap better  
+[Day 40](./day38) - Implement a min heap real good  
+[Day 41](./day41) - Use heap implementation to redo Top K Frequent  
 [Day 42](./day42)  
-[Day 43](./day43) - Implement a max heap better than the previous min heap
+[Day 43](./day43) - Implement a max heap better than the previous min heap  
 [Day 44](./day44)  
 [Day 45](./day45)  
 
