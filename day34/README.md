@@ -50,5 +50,8 @@ function, it's also using and `O(n)` space.
 
 ## Follow-up
 
-
+We can reduce the linear time complexity by iterating over the entire input
+string once to find whether the string is an ipv4 or ipv6 candidate, and then
+doing the check on the string via iteration without the `.split(".")` or 
+`.split(":")` calls. The iteration syntax may be a little messy though.
 
