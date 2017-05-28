@@ -41,7 +41,8 @@ IPv6
 Input strings that don't fit either set of constraints are neither IPv4 nor IPv6.
 
 This solution basically just parses through the input string a constant number
-of times, so it runs in `O(n)` time and `O(1)` space.
+of times, so it runs in `O(n)` time but because I use the python split
+function, it's also using and `O(n)` space.
 
 ## Code
 
