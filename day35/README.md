@@ -35,3 +35,4 @@ end will take `O(n)` runtime and `O(1)` space.
 
 ## Follow-up
 
+Try writing this in C.
