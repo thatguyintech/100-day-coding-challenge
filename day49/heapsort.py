@@ -1,8 +1,16 @@
+import heapq
+
 def outofplace(arr):
-    return arr
+    heapq.heapify(arr)
+    result = []
+    size = len(arr)
+    while size > 0:
+        result.append(heapq.heappop(arr))
+        size -= 1
+    return result
 
 def inplace(arr):
-    return
+    print arr
 
 def testHeapsort():
     assert outofplace([1]) == [1]
