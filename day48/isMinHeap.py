@@ -14,13 +14,3 @@ def isMinHeap(arr):
 
     size = len(arr)
     return arr[0] <= arr[1] and arr[0] <= arr[2] and subTreeIsHeap(1, arr, size) and subTreeIsHeap(2, arr, size)
-
-def testIsMinHeap():
-    assert isMinHeap([2, 3, 4, 5, 10, 15])
-    assert not isMinHeap([2, 10, 4, 5, 3, 15])
-
-def tests():
-    testIsMinHeap()
-
-if __name__ == "__main__":
-    tests()
